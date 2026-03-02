@@ -17,4 +17,4 @@ RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 
 EXPOSE 8080
 
-CMD php bin/console doctrine:schema:update --force --no-interaction && php -S 0.0.0.0:${PORT:-8080} -t public
+CMD php bin/console cache:clear --no-interaction && php bin/console doctrine:schema:update --force --no-interaction && php -S 0.0.0.0:${PORT:-8080} -t public public/index.php
