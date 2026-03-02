@@ -1,0 +1,23 @@
+# Frontend
+frontend/.output
+frontend/.data
+frontend/.nuxt
+frontend/.nitro
+frontend/.cache
+frontend/dist
+frontend/node_modules
+
+# Backend
+backend/var/
+backend/vendor/
+backend/.env.local
+
+# Logs
+logs
+*.log
+
+# Misc
+.DS_Store
+.fleet
+.idea
+.vscode

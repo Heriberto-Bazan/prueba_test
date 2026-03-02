@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background-color: #f8fafc;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-display: swap;
+}
