@@ -4,7 +4,19 @@ export default defineNuxtConfig({
 
   modules: [
     '@nuxtjs/tailwindcss',
+    '@vite-pwa/nuxt',
   ],
+
+  pwa: {
+    manifest: {
+      name: 'Generador de Facturas',
+      short_name: 'Facturas',
+      theme_color: '#1B4F72',
+    },
+    workbox: {
+      navigateFallback: null,
+    },
+  },
 
   css: ['~/assets/css/main.css'],
 
