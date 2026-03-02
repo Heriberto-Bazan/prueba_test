@@ -14,7 +14,8 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 WORKDIR /app
 COPY . .
 RUN composer install --no-interaction --prefer-dist --optimize-autoloader
+RUN APP_ENV=prod APP_SECRET=railway123 php bin/console cache:warmup --no-interaction || true
 
 EXPOSE 8080
 
-CMD php bin/console cache:clear --no-interaction && php bin/console doctrine:schema:update --force --no-interaction && php -S 0.0.0.0:${PORT:-8080} -t public public/index.php
+CMD php bin/console doctrine:schema:update --force --no-interaction && php -S 0.0.0.0:${PORT:-8080} -t public public/index.php
